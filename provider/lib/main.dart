@@ -38,20 +38,17 @@ class _NoteListState extends State<NoteList> {
   @override
   void initState() {
     super.initState();
-    // Tidak perlu memanggil fetchNotes di sini
   }
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    // Memanggil fetchNotes ketika dependensi berubah
     Provider.of<NoteModel>(context, listen: false).fetchNotes();
   }
 
 
   @override
 Widget build(BuildContext context) {
-  //Dapatkan instance NoteModel
   var noteModel = Provider.of<NoteModel>(context);
   return Scaffold(
     appBar: AppBar(
